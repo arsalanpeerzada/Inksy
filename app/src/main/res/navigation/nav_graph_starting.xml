@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/numberVerify">
+
+
+    <fragment
+        android:id="@+id/numberVerify"
+        android:name="com.inksy.UI.Fragments.NumberVerify"
+        android:label="NumberVerify"
+        tools:layout="@layout/fragment_number_verify">
+        <action
+            android:id="@+id/action_numberVerify_to_fragmentOtp"
+            app:destination="@id/fragmentOtp"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOtp"
+        android:name="com.inksy.UI.Fragments.FragmentOtp"
+        android:label="FragmentOtp"
+        tools:layout="@layout/fragment_otp">
+
+        <action
+            android:id="@+id/action_fragmentOtp_to_numberVerify"
+            app:destination="@id/numberVerify"
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right" />
+        <action
+            android:id="@+id/action_fragmentOtp_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_fragmentOtp_to_forgetPassword2"
+            app:destination="@id/forgetPassword2"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_fragmentOtp_to_bio"
+            app:destination="@id/bio"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.inksy.UI.Fragments.Login"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+
+
+        <action
+            android:id="@+id/action_login_to_bio"
+            app:destination="@id/bio"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_login_to_numberVerify"
+            app:destination="@id/numberVerify"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_login_to_password_Email"
+            app:destination="@id/password_Email"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_login_to_fragmentOtp"
+            app:destination="@id/fragmentOtp"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+    </fragment>
+    <fragment
+        android:id="@+id/bio"
+        android:name="com.inksy.UI.Fragments.Bio"
+        android:label="Bio"
+        tools:layout="@layout/fragment_bio">
+
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPassword2"
+        android:name="com.inksy.UI.Fragments.ForgetPassword"
+        android:label="ForgetPassword"
+        tools:layout="@layout/fragment_forget_password">
+        <action
+            android:id="@+id/action_forgetPassword2_to_numberVerify"
+            app:destination="@id/numberVerify"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+    </fragment>
+    <fragment
+        android:id="@+id/password_Email"
+        android:name="com.inksy.UI.Fragments.Password_Email"
+        android:label="Password_Email"
+        tools:layout="@layout/fragment_password__email">
+        <action
+            android:id="@+id/action_password_Email_to_fragmentOtp"
+            app:destination="@id/fragmentOtp"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_password_Email_to_numberVerify"
+            app:destination="@id/numberVerify"
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right" />
+        <action
+            android:id="@+id/action_password_Email_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right" />
+    </fragment>
+</navigation>

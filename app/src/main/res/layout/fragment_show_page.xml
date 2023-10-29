@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UI.Fragments.CreateJournalCoverInfo">
+
+
+
+        <RelativeLayout
+            android:id="@+id/loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/fullblackpattihigh"
+            android:elevation="10dp"
+            android:visibility="gone">
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                app:SpinKit_Color="@color/appBlue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/texteditor"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textSize="@dimen/_16sdp"
+            android:drawablePadding="10dp"
+            android:text="Journal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/applightblue" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_16sdp"
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Index"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/checked"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack"
+            app:tint="@color/applightblue" />
+
+
+        <TextView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="7"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Edit"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView20"
+            app:layout_constraintVertical_bias="0.516" />
+
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView20"
+            app:layout_constraintVertical_bias="0.516" />
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/checked"
+            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            app:tint="@color/applightblue"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/view19"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view10">
+
+            <ja.burhanrashid52.photoeditor.PhotoEditorView
+                android:id="@+id/photoEditorView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/paris_tower"
+                app:layout_constraintBottom_toTopOf="@+id/view19"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack"></ja.burhanrashid52.photoeditor.PhotoEditorView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bulletLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@+id/texteditor"
+            app:layout_constraintTop_toBottomOf="@+id/view10">
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/bullets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/bullets"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/landscape"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toTopOf="@+id/bullets" />
+
+
+        <ImageView
+            android:id="@+id/background_Picture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/text_with_image"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/bullets" />
+
+        <ImageView
+            android:id="@+id/doodle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/doodle"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="@+id/bullets" />
+
+
+        <ImageView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/text"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view4"
+            app:layout_constraintTop_toTopOf="@+id/bullets" />
+
+        <ImageView
+            android:id="@+id/buttonUndo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/ic_baseline_undo_24"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view7"
+            app:layout_constraintTop_toTopOf="@+id/bullets" />
+
+        <ImageView
+            android:id="@+id/buttonRedo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/ic_baseline_redo_24"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/plus"
+            app:layout_constraintTop_toTopOf="@+id/bullets" />
+
+        <View
+            android:id="@+id/view19"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/round_border_edittext_solid_grey"
+            android:elevation="-1dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/plus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/plus"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bullets" />
+
+        <ImageView
+
+            android:id="@+id/dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:src="@drawable/dropdown"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/plus"
+            app:layout_constraintEnd_toStartOf="@+id/view4"
+            app:layout_constraintTop_toTopOf="@+id/plus" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@color/appgrey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/bullets"
+            app:layout_constraintStart_toEndOf="@+id/bullets"
+            app:layout_constraintTop_toTopOf="@+id/bullets"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@color/appgrey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/picture"
+            app:layout_constraintStart_toEndOf="@+id/picture"
+            app:layout_constraintTop_toTopOf="@+id/bullets"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@color/appgrey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/background_Picture"
+            app:layout_constraintStart_toEndOf="@+id/background_Picture"
+            app:layout_constraintTop_toTopOf="@+id/bullets"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@color/appgrey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/doodle"
+            app:layout_constraintStart_toEndOf="@+id/doodle"
+            app:layout_constraintTop_toTopOf="@+id/bullets"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <View
+
+
+            android:id="@+id/view5"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@color/appgrey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/plus"
+            app:layout_constraintEnd_toStartOf="@+id/plus"
+            app:layout_constraintTop_toTopOf="@+id/plus"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/view6"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="Normal Text"
+            android:textColor="@color/appBlue"
+            android:textSize="@dimen/_11sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/plus"
+            app:layout_constraintEnd_toStartOf="@+id/dropdown"
+            app:layout_constraintTop_toTopOf="@+id/plus"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@color/appgrey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/bullets"
+            app:layout_constraintEnd_toStartOf="@+id/buttonRedo"
+            app:layout_constraintTop_toTopOf="@+id/bullets"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/bullets"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_color" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/nextpage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:drawableEnd="@drawable/nextpage"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/select_page"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

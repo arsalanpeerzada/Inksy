@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.inksy">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Inksy">
+        <activity
+            android:name=".UI.Activities.ShareJournalActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".UI.Activities.ShowPageViewPager"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.EditPackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ShowPage"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ShowJournal"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.List"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.Contact_Form"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ViewOnlyJournal"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.PackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.Doodle_Drawing"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.CreateActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".UI.Activities.CommunityGuide"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".UI.Activities.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.AmountReceived"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.OtherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ArtistDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ArtisePanel"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.People"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.DoodleStore"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ViewAll"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.ChatActivityNew"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.PhotoViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Activities.StartingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".UI.Activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.Activities.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.inksy.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".fcm.FirebaseMessagingService"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9808753304257500~5619149806" />
+    </application>
+
+</manifest>

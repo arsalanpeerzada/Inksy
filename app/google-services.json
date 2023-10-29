@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "337919082895",
+    "project_id": "inksy-c14c7",
+    "storage_bucket": "inksy-c14c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337919082895:android:03bddd833ae1875f4fcbfa",
+        "android_client_info": {
+          "package_name": "com.inksy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337919082895-g5j83i6e30p56kclk3dj4c3eio4022cn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inksy",
+            "certificate_hash": "2ce9d9951f281f7d49bd5182972bd667a45bde73"
+          }
+        },
+        {
+          "client_id": "337919082895-oitnp3snr68k241igecs09vqglr9i6ul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inksy",
+            "certificate_hash": "65ee713ec5db07e56dd2a7403fc058831efa857b"
+          }
+        },
+        {
+          "client_id": "337919082895-jlc4p1takf9pho7ief8rm99ca7f9h35v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1VvRTNQQoFuWQFy74zMRrhnnRZ8Ja_-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337919082895-jlc4p1takf9pho7ief8rm99ca7f9h35v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "337919082895-gb76ni8q395kdr0jqnfl74tlq49ks1cr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.inksyy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

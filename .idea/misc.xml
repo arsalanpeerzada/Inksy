@@ -1,0 +1,277 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable-hdpi/ic_chat_my.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable-hdpi/ic_img_splash.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable-ldpi/round_border_edittext_search.xml" value="0.14703947368421053" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable-v24/ic_chat_other.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/background_line.xml" value="0.2546052631578947" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/bluegradient.xml" value="0.2498371335504886" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/bottom_round.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/bottomnavview.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/button.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/dotted_line.xml" value="0.35509259259259257" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/ic_photos.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/ic_send_chat.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/round_border_edittext.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/round_border_edittext_blue.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/round_border_edittext_gradient.xml" value="0.403125" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/tab_selected.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/drawable/tab_unselected.xml" value="0.2523026315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_artise_panel.xml" value="0.290234375" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_artist_dashboard.xml" value="0.2444078947368421" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_change_password.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_chat.xml" value="0.3360730593607306" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_doodle_store.xml" value="0.34074074074074073" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_main.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_number_verification.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_people.xml" value="0.290234375" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_phone_contact.xml" value="0.2444078947368421" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_profile.xml" value="0.34074074074074073" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_splash.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/activity_view_all.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_artwork.xml" value="0.2444078947368421" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_bio.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_chat.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_daily_exercise.xml" value="0.2444078947368421" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_dashboard__analytics.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_dashboard__approved.xml" value="0.32587719298245615" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_dashboard_pending.xml" value="0.32587719298245615" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_doodle_store.xml" value="0.34074074074074073" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_edit_profile.xml" value="0.2444078947368421" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_journal.xml" value="0.3360730593607306" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_login.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_more_info.xml" value="0.23973941368078175" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_number_verify.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_otp.xml" value="0.2444078947368421" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_resetpassword.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_sub__journal.xml" value="0.3439814814814815" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/fragment_sub__people.xml" value="0.3439814814814815" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_artwork.xml" value="0.33" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_book.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_chat.xml" value="0.24210526315789474" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_dashboard.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_dashboardapproved.xml" value="0.38697916666666665" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_dashboardpending.xml" value="0.32587719298245615" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_doodle.xml" value="0.34074074074074073" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/item_journal.xml" value="0.37743589743589745" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/tablayout.xml" value="0.3360730593607306" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/tablayout_1.xml" value="0.3360730593607306" />
+        <entry key="..\:/AndroidProjects/BSQP Tech/StoryLife/app/src/main/res/layout/tablayout_2.xml" value="0.38697916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable-hdpi/transparent.xml" value="0.1435" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable-ldpi/round_border_edittext_search.xml" value="0.28703703703703703" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable-ldpi/round_border_edittext_solid_blue.xml" value="0.29907407407407405" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable-ldpi/round_border_edittext_solid_grey.xml" value="0.16458333333333333" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable-xxxhdpi/ic_brush.xml" value="0.10888157894736843" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable-xxxhdpi/rounded_border_text_view.xml" value="0.10888157894736843" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/border_layout_grey.xml" value="0.14046052631578948" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/bottom_round.xml" value="0.309375" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/cardview_selective_round.xml" value="0.3046153846153846" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/dotted_line.xml" value="0.309375" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/dotted_line_curved.xml" value="0.19348534201954398" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/ic_avatar1.xml" value="0.1435" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.30185185185185187" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/ic_baseline_format_list_numbered_24.xml" value="0.15763888888888888" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.19348534201954398" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/ic_empty_notifications.xml" value="0.1435" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/myrect.xml" value="0.29907407407407405" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/round_border_edittext.xml" value="0.19348534201954398" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/round_border_edittext_blue.xml" value="0.29907407407407405" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/round_border_edittext_gradient.xml" value="0.19539473684210526" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/round_border_edittext_search.xml" value="0.14046052631578948" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/round_border_edittext_solid_blue.xml" value="0.19348534201954398" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/round_border_edittext_solid_grey.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/drawable/round_border_edittext_solidbackgroundgrey.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_amount_received.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_artise_panel.xml" value="0.17569444444444443" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_artist_dashboard.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_change_password.xml" value="0.14305555555555555" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_chat.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_contact_form.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_create.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_doodle_drawing.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_doodle_store.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_list.xml" value="0.1723684210526316" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_number_verification.xml" value="0.16666666666666666" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_other.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_pack.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_payment.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_people.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_privacy.xml" value="0.1763157894736842" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_profile.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_splash.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_view_all.xml" value="0.14722222222222223" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/activity_view_only_journal.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/add_text_dialog.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/bottom_dialog_wheel.xml" value="0.14305555555555555" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/color_picker_item_list.xml" value="0.13055555555555556" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/create_bullets_dialog.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/dialog.xml" value="0.125" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/dialog_ArtistPanel.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/dialog_artistpanel.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/dialoge_report_event.xml" value="0.1723684210526316" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/font_picker_item_list.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_about_us.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_artwork.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_bio.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_bottom_custom_effect_dialog.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_bottom_properties_dialog.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_bottom_shapes_dialog.xml" value="0.13055555555555556" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_bottom_sticker_emoji_dialog.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_chat.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_check.xml" value="0.1723684210526316" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_comment__bottom_sheet.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_create_journal_background_boder_color.xml" value="0.16875" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_create_journal_entry.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_create_journal_index.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_createjournal.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_createjournal2.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_createjournal3.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_createjournalcover.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_daily_exercise.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_dashboard__analytics.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_dashboard__approved.xml" value="0.27685185185185185" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_dashboard_pending.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_doodle_store.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_edit_profile.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_item_list_dialog_list_dialog.xml" value="0.2791666666666667" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_item_list_dialog_list_dialog_item.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_journal.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_lastentry.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_list.xml" value="0.1723684210526316" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_more_info.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_notification.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_notifications.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_number_verify.xml" value="0.1451388888888889" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_others_list.xml" value="0.16458333333333333" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_otp.xml" value="0.1451388888888889" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_privacy_policy.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_profile.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_resetpassword.xml" value="0.14305555555555555" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_select__audience.xml" value="0.1763157894736842" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_select_audience.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_selected_audience.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_sub__journal.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_sub__people.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/fragment_terms.xml" value="0.14305555555555555" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_alpha_list.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_amoun_received.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_artwork.xml" value="0.1673611111111111" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_audience.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_book.xml" value="0.33" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_border_color.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_bulletText.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_bullettext.xml" value="0.15902777777777777" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_chat.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_checkboxtext.xml" value="0.13541666666666666" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_color.xml" value="0.33" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_color_dialog.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_comment.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_dashboard.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_dashboardapproved.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_dashboardpending.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_doodle.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_journal.xml" value="0.18338762214983714" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_list.xml" value="0.1723684210526316" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_notifications.xml" value="0.13157894736842105" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_number_list.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_packtitle.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_people.xml" value="0.33" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/item_select_font.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/row_editing_tools.xml" value="0.1" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/row_emoji.xml" value="0.1" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/row_filter_view.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/row_sticker.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/tablayout.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/tablayout_1.xml" value="0.25" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/tablayout_2.xml" value="0.14305555555555555" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/layout/two_button_dialog.xml" value="0.14444444444444443" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/menu-v26/view_journal_popup.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/menu/comment_pop_up.xml" value="0.18519736842105264" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/menu/pop_up.xml" value="0.29322916666666665" />
+        <entry key="..\:/Arsalan/storylife-android/app/src/main/res/menu/view_journal_popup.xml" value="0.1673611111111111" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/drawable-hdpi/ic_chat_my.xml" value="0.1" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/drawable-v24/ic_chat_other.xml" value="0.1" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.115" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout-sw600dp/chat_message_item.xml" value="0.134765625" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_amount_received.xml" value="0.14175724637681159" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_artise_panel.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_artist_dashboard.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_chat.xml" value="0.14074074074074075" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_chat_new.xml" value="0.17864583333333334" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_editpack.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_list.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_pack.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_payment.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_people.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_photo_viewer.xml" value="0.17864583333333334" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_show_journal.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/activity_view_only_journal.xml" value="0.1" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/chat_message_item.xml" value="0.14074074074074075" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/dialog.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_chat.xml" value="0.1" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_comment__bottom_sheet.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_journal.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_notifications.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_otp.xml" value="0.1" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_password__email.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_sub__journal.xml" value="0.1" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/fragment_sub__people.xml" value="0.17978113600833767" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/item_chat.xml" value="0.1" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/item_notifications.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/layout/item_people.xml" value="0.1796875" />
+        <entry key="..\:/Shahzor Qureshi/storylife-android/app/src/main/res/menu/camera_gallery.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.247" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/drawable/round_outline.xml" value="0.247" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/activity_doodle_drawing.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/activity_editpack.xml" value="0.3040098199672668" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/activity_pack.xml" value="0.3040098199672668" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/activity_people.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/activity_share_journal.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/activity_view_all.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/activity_view_only_journal.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/create_bullets_dialog.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/dialog_artistpanel.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/dialog_image.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_about_us.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_artwork.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_comment__bottom_sheet.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_create_journal_entry.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_create_journal_index.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_dashboard__analytics.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_dashboard_pending.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_doodle_store.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_login.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_otp.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_privacy_policy.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_profile.xml" value="0.381025641025641" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_selected_audience.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_sub__journal.xml" value="0.25092592592592594" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/fragment_terms.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_artwork.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_book.xml" value="0.381025641025641" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_categories.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_comment.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_dashboardpending.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_doodle.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_doodleview.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/item_reply.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/layout/no_internet_dialog.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/menu/pop_up.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Arsalan Peerzada/StudioProjects/storylife-android/app/src/main/res/menu/view_journal_popup.xml" value="0.38697916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

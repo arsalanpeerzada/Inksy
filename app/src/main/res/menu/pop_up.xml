@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.inksy.UI.Activities.People">
+
+    <item
+        android:id="@+id/link_bullet"
+        android:icon="@drawable/ic_baseline_insert_link_24"
+        android:iconTint="@color/black"
+        android:title="Link for Bullet"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/link_title"
+        android:icon="@drawable/ic_baseline_insert_link_24"
+        android:iconTint="@color/black"
+        android:title="Link for Header"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/Edit"
+        android:icon="@drawable/write"
+        android:iconTint="@color/black"
+        android:title="Edit"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/Delete"
+        android:icon="@drawable/ic_baseline_delete_24_black"
+        android:iconTint="@color/black"
+        android:title="Delete"
+        app:showAsAction="always" />
+
+
+
+
+</menu>

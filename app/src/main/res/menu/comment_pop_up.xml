@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu tools:context="com.inksy.UI.Activities.People"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/Report"
+        android:icon="@drawable/ic_baseline_report_24"
+        android:iconTint="@color/black"
+        android:title="Report"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/edit"
+        android:icon="@drawable/write"
+        android:iconTint="@color/black"
+        android:title="Edit"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/Delete"
+        android:icon="@drawable/ic_baseline_delete_24_black"
+        android:iconTint="@color/black"
+        android:title="Delete"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/Block"
+        android:icon="@drawable/ic_baseline_block_24"
+        android:iconTint="@color/black"
+        android:title="Block User"
+        app:showAsAction="always" />
+
+
+</menu>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/_16sdp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/Image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_empty_doodles" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/packtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/sfsemibold"
+        android:maxLines="1"
+        android:text="Doodle Drawing"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toStartOf="@+id/salesCount"
+        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintTop_toTopOf="@+id/cardView2" />
+
+    <TextView
+        android:id="@+id/packsize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/sfmedium"
+        android:text="Pack of 13"
+        android:textColor="@color/appBlue"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/packtitle" />
+
+
+    <TextView
+        android:id="@+id/amountCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:fontFamily="@font/sfsemibold"
+        android:text="$12"
+        android:textColor="@color/appBlue"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/packtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/packtitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sfmedium"
+        android:text="Amount"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="@+id/amountCount"
+        app:layout_constraintStart_toStartOf="@+id/amountCount"
+        app:layout_constraintTop_toBottomOf="@+id/amountCount" />
+
+
+    <TextView
+        android:id="@+id/salesCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_32sdp"
+        android:fontFamily="@font/sfsemibold"
+        android:text="$12"
+        android:textColor="@color/appBlue"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/packtitle"
+        app:layout_constraintEnd_toStartOf="@+id/amountCount"
+        app:layout_constraintTop_toTopOf="@+id/packtitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sfmedium"
+        android:text="Sales"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="@+id/salesCount"
+        app:layout_constraintStart_toStartOf="@+id/salesCount"
+        app:layout_constraintTop_toBottomOf="@+id/salesCount" />
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/line_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FFFFFFFF</color>
+    <color name="realwhite">#FFFFFFFF</color>
+    <color name="white">#091E2A</color>
+    <color name="fullblack">#091E2A</color>
+    <color name="black_transparent">#4D000000</color>
+    <color name="applightblue">#3E73C8</color>
+    <color name="appBlue">#3E73C8</color>
+    <color name="realappBlue">#00009C</color>
+    <color name="cover_blue">#1253BC</color>
+    <color name="line_blue">#0052BE</color>
+    <color name="appBlueDark">#00004E</color>
+    <color name="errorRed">#FF0000</color>
+    <color name="bottombarColor">#F5F6FF</color>
+    <color name="grey">#8D8D8D</color>
+    <color name="divider">#D8D8D8</color>
+    <color name="search_grey">#F1F1F1</color>
+    <color name="line_grey">#D8D8D8</color>
+    <color name="line_grey2">#D8D8D8</color>
+    <color name="line_grey_trans">#CBD8D8D8</color>
+    <color name="transparent">#00DDDDDD</color>
+    <color name="appgrey">#B4B9DD</color>
+    <color name="privacy_grey">#869099</color>
+    <color name="shadowColor">#0000004D</color>
+    <color name="likeActiveColor">#F10E44</color>
+    <color name="likeSecondaryColor">#F83C68</color>
+    <color name="fullblackpatti">#28000000</color>
+    <color name="journalBlue">#039CB4</color>
+    <color name="journalRed">#B50F38</color>
+    <color name="journalGreen">#81B60D</color>
+    <color name="journalPurple">#4800B4</color>
+    <color name="fullblackpattihigh">#9A000000</color>
+    <color name="defaulttextcolor">#878787</color>
+    <color name="doodleBackground">#091E2A</color>
+
+    <color name="fullblackpattihigh2">#CC000000</color>
+
+
+    <color name="blue_color_picker">#0066FF</color>
+    <color name="brown_color_picker">#AF593E</color>
+    <color name="green_color_picker">#01A368</color>
+    <color name="orange_color_picker">#FF861F</color>
+    <color name="red_color_picker">#ED0A3F</color>
+    <color name="red_orange_color_picker">#FF3F34</color>
+    <color name="sky_blue_color_picker">#76D7EA</color>
+    <color name="violet_color_picker">#8359A3</color>
+    <color name="yellow_color_picker">#FBE870</color>
+    <color name="yellow_green_color_picker">#C5E17A</color>
+    <color name="tool_bg">#151414</color>
+    <color name="semi_black_transparent">#99000000</color>
+
+
+</resources>

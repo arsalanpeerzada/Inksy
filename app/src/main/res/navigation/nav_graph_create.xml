@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_create"
+    app:startDestination="@id/createjournal">
+
+
+    <fragment
+        android:label="createjournal"
+        android:id="@+id/createjournal"
+        android:name="com.inksy.UI.Fragments.createjournal"
+        tools:layout="@layout/fragment_createjournal">
+        <action
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2"
+            android:id="@+id/action_createjournal_to_createJournalBackgroundBorderColor"
+            app:destination="@id/createJournalBackgroundBorderColor" />
+    </fragment>
+    <fragment
+        android:id="@+id/create_journal_entry"
+        android:name="com.inksy.UI.Fragments.create_journal_entry"
+        android:label="create_journal_entry"
+        tools:layout="@layout/fragment_create_journal_entry">
+        <action
+            android:id="@+id/action_create_journal_entry_to_createjournal"
+            app:destination="@id/createjournal"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right"
+            android:id="@+id/action_create_journal_entry_to_createJournalIndex"
+            app:destination="@id/createJournalIndex" />
+    </fragment>
+    <fragment
+        android:id="@+id/CreateJournalCoverInfo"
+        android:name="com.inksy.UI.Fragments.CreateJournalCoverInfo"
+        android:label="JournalCover"
+        tools:layout="@layout/fragment_createjournalcover">
+        <action
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right"
+            android:id="@+id/action_CreateJournalCoverInfo_to_createJournalBackgroundBorderColor"
+            app:destination="@id/createJournalBackgroundBorderColor" />
+        <action
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2"
+            android:id="@+id/action_CreateJournalCoverInfo_to_createJournalIndex"
+            app:destination="@id/createJournalIndex" />
+        <action
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2"
+            android:id="@+id/action_CreateJournalCoverInfo_to_select_Audience"
+            app:destination="@id/select_Audience" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/createJournalBackgroundBorderColor"
+        android:name="com.inksy.UI.Fragments.CreateJournalBackgroundBorderColor"
+        android:label="CreateJournalBackgroundBorderColor"
+        tools:layout="@layout/fragment_create_journal_background_boder_color">
+        <action
+            android:id="@+id/action_createJournalBackgroundBorderColor_to_createjournal"
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right"
+            app:destination="@id/createjournal" />
+        <action
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2"
+            android:id="@+id/action_createJournalBackgroundBorderColor_to_CreateJournalCoverInfo"
+            app:destination="@id/CreateJournalCoverInfo" />
+
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_create_journal_index"
+        android:id="@+id/createJournalIndex"
+        android:name="com.inksy.UI.Fragments.CreateJournalIndex"
+        android:label="CreateJournalIndex" >
+        <action
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right"
+            android:id="@+id/action_createJournalIndex_to_CreateJournalCoverInfo"
+            app:destination="@id/CreateJournalCoverInfo" />
+        <action
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2"
+            android:id="@+id/action_createJournalIndex_to_create_journal_entry"
+            app:destination="@id/create_journal_entry" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_select_audience"
+        android:id="@+id/select_Audience"
+        android:name="com.inksy.UI.Fragments.Select_Audience"
+        android:label="Select_Audience">
+
+        <action
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right"
+            android:id="@+id/action_select_Audience_to_CreateJournalCoverInfo"
+            app:destination="@id/CreateJournalCoverInfo" />
+        <action
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2"
+            android:id="@+id/action_select_Audience_to_selectedAudience2"
+            app:destination="@id/selectedAudience" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedAudience"
+        android:name="com.inksy.UI.Fragments.SelectedAudience"
+        android:label="SelectedAudience"
+        tools:layout="@layout/fragment_selected_audience">
+
+        <action
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right"
+            android:id="@+id/action_selectedAudience_to_select_Audience2"
+            app:destination="@id/select_Audience" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu tools:context="com.inksy.UI.Activities.People"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:id="@+id/g1">
+    <item
+        android:id="@+id/View"
+        android:icon="@drawable/visibility"
+        android:iconTint="@color/white"
+        android:title="View"
+        app:showAsAction="always" />
+    </group>
+
+    <group android:id="@+id/g2">
+        <item
+            android:id="@+id/Home"
+            android:icon="@drawable/ic_baseline_report_24"
+            android:iconTint="@color/white"
+            android:title="Home"
+            app:showAsAction="always" />
+    </group>
+
+    <group android:id="@+id/g3">
+    <item
+        android:id="@+id/Report"
+        android:icon="@drawable/ic_baseline_report_24"
+        android:iconTint="@color/white"
+        android:title="Report"
+        app:showAsAction="always" />
+    </group>
+    <item
+        android:id="@+id/edit"
+        android:icon="@drawable/write"
+        android:iconTint="@color/white"
+        android:title="Edit"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/block"
+        android:icon="@drawable/ic_baseline_block_24"
+        android:iconTint="@color/white"
+        android:title="Block"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/Delete"
+        android:icon="@drawable/ic_baseline_delete_24_black"
+        android:iconTint="@color/white"
+        android:title="Delete"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/gallery"
+        android:iconTint="@color/white"
+        android:title="Gallery"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/doodle"
+        android:iconTint="@color/white"
+        android:title="Doodle"
+        app:showAsAction="always" />
+
+    <item
+        android:icon="@drawable/ic_baseline_touch_app_24"
+        android:visible="false"
+        android:id="@+id/Deactivate"
+        android:iconTint="@color/black"
+        android:title="Ask for Activation"
+        app:showAsAction="always" />
+
+</menu>

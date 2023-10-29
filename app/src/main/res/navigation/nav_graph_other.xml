@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/othersList">
+
+
+    <fragment
+        android:id="@+id/othersList"
+        android:name="com.inksy.UI.Fragments.OthersList"
+        android:label="OthersList"
+        tools:layout="@layout/fragment_others_list">
+        <action
+            android:id="@+id/action_othersList_to_aboutUs"
+            app:destination="@id/aboutUs"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_othersList_to_terms"
+            app:destination="@id/terms"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+        <action
+            android:id="@+id/action_othersList_to_privacyPolicy"
+            app:destination="@id/privacyPolicy"
+            app:enterAnim="@anim/left"
+            app:exitAnim="@anim/left2" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUs"
+        android:name="com.inksy.UI.Fragments.AboutUs"
+        android:label="AboutUs"
+        tools:layout="@layout/fragment_about_us">
+        <action
+            android:id="@+id/action_aboutUs_to_othersList"
+            app:destination="@id/othersList"
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right" />
+    </fragment>
+    <fragment
+        android:id="@+id/terms"
+        android:name="com.inksy.UI.Fragments.Terms"
+        android:label="Terms"
+        tools:layout="@layout/fragment_terms">
+        <action
+            android:id="@+id/action_terms_to_othersList"
+            app:destination="@id/othersList"
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyPolicy"
+        android:name="com.inksy.UI.Fragments.PrivacyPolicy"
+        android:label="PrivacyPolicy"
+        tools:layout="@layout/fragment_privacy_policy">
+        <action
+            android:id="@+id/action_privacyPolicy_to_othersList"
+            app:destination="@id/othersList"
+            app:enterAnim="@anim/right2"
+            app:exitAnim="@anim/right" />
+    </fragment>
+</navigation>
