@@ -166,15 +166,16 @@
                         android:id="@+id/imgAttach"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
+                        android:visibility="visible"
                         android:src="@drawable/ic_photos" />
 
 
+<!--                    android:layout_marginLeft="@dimen/_15sdp"-->
                     <EditText
                         android:id="@+id/etMessage"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/_15sdp"
                         android:layout_marginRight="@dimen/_10sdp"
                         android:layout_weight="1"
                         android:background="@color/transparent"

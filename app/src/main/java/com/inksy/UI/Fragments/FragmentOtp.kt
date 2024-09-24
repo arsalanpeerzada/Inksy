@@ -26,7 +26,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.appcheck.FirebaseAppCheck
-import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory
+//import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory
 import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
@@ -43,6 +43,7 @@ import com.inksy.UI.ViewModel.PeopleView
 import com.inksy.Utils.TinyDB
 import com.inksy.databinding.FragmentOtpBinding
 import java.util.concurrent.TimeUnit
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 
 
 class FragmentOtp : Fragment(), OnKeyboardVisibilityListener {
@@ -144,15 +145,44 @@ class FragmentOtp : Fragment(), OnKeyboardVisibilityListener {
         binding.timer.setOnClickListener {
 
             if (binding.timer.text.toString() == "Resend Code"){
+                var check = forgetPasswordData
 
                 if (forgetPasswordData){
-                    verifyEmail(email, token, binding.otpView.text.toString())
+                    peopleView.forgotPassword(email!!, token)
+                        ?.observe(requireActivity()) {
+                            binding.loader.visibility = View.VISIBLE
+                            when (it?.status) {
+                                Status.SUCCESS -> {
+                                    Toast.makeText(
+                                        requireContext(),
+                                        it?.data?.message,
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    binding.loader.visibility = View.GONE
+                                }
+                                Status.ERROR -> {
+
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "Email not valid",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    binding.loader.visibility = View.GONE
+                                }
+                                Status.LOADING -> {}
+                                else -> {}
+                            }
+                        }
                 }else {
                     auth = Firebase.auth
                     FirebaseApp.initializeApp(requireContext())
                     val firebaseAppCheck = FirebaseAppCheck.getInstance()
+                    // check
+//                    firebaseAppCheck.installAppCheckProviderFactory(
+//                        SafetyNetAppCheckProviderFactory.getInstance()
+//                    )
                     firebaseAppCheck.installAppCheckProviderFactory(
-                        SafetyNetAppCheckProviderFactory.getInstance()
+                        PlayIntegrityAppCheckProviderFactory.getInstance()
                     )
 
                     val options = PhoneAuthOptions.newBuilder(auth)
@@ -254,8 +284,12 @@ class FragmentOtp : Fragment(), OnKeyboardVisibilityListener {
             auth = Firebase.auth
             FirebaseApp.initializeApp(requireContext())
             val firebaseAppCheck = FirebaseAppCheck.getInstance()
+            // check
+//            firebaseAppCheck.installAppCheckProviderFactory(
+//                SafetyNetAppCheckProviderFactory.getInstance()
+//            )
             firebaseAppCheck.installAppCheckProviderFactory(
-                SafetyNetAppCheckProviderFactory.getInstance()
+                PlayIntegrityAppCheckProviderFactory.getInstance()
             )
 
             val options = PhoneAuthOptions.newBuilder(auth)

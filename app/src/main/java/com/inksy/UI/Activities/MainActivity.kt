@@ -1,9 +1,14 @@
 package com.inksy.UI.Activities
 
 import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
+import android.os.BatteryManager
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -16,8 +21,13 @@ import com.inksy.Interfaces.OnDialogClickListener
 import com.inksy.R
 import com.inksy.UI.Dialogs.NoInternetDailog
 import com.inksy.UI.Dialogs.TwoButtonDialog
-import com.inksy.UI.Fragments.*
+import com.inksy.UI.Fragments.Artwork
+import com.inksy.UI.Fragments.Chat
+import com.inksy.UI.Fragments.Journal
+import com.inksy.UI.Fragments.MoreInfo
+import com.inksy.UI.Fragments.Notifications_Fragment
 import com.inksy.Utils.MyReceiverForInternet
+import com.inksy.Utils.TinyDB
 import com.inksy.databinding.ActivityMainBinding
 
 
@@ -30,6 +40,8 @@ class MainActivity : AppCompatActivity(), NetworkStateChangeListener {
     private lateinit var adapterViewPager: MyPagerAdapter
     lateinit var binding: ActivityMainBinding
     lateinit var vpPager: ViewPager
+    lateinit var tinyDB: TinyDB
+    private var broadcastReceiver: BroadcastReceiver? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -37,7 +49,6 @@ class MainActivity : AppCompatActivity(), NetworkStateChangeListener {
         vpPager = binding.vpPager
         adapterViewPager = MyPagerAdapter(supportFragmentManager)
         vpPager.adapter = adapterViewPager
-
 
         vpPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(
@@ -65,7 +76,8 @@ class MainActivity : AppCompatActivity(), NetworkStateChangeListener {
 
         }
         binding.chat.setOnClickListener {
-
+            tinyDB.putBoolean("ChatIndicator", false)
+            updateUIForIndicator()
             selectFragment(1)
             vpPager.currentItem = 1
         }
@@ -75,7 +87,8 @@ class MainActivity : AppCompatActivity(), NetworkStateChangeListener {
             vpPager.currentItem = 2
         }
         binding.notification.setOnClickListener() {
-
+            tinyDB.putBoolean("OtherIndicator", false)
+            updateUIForIndicator()
             selectFragment(3)
             vpPager.currentItem = 3
         }
@@ -92,6 +105,15 @@ class MainActivity : AppCompatActivity(), NetworkStateChangeListener {
             selectFragment(3)
         }
 
+        broadcastReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                Log.d("BroadcastReceiver", "FirebaseMessagingService")
+                updateUIForIndicator()
+            }
+        }
+        val filter = IntentFilter("INDICATOR_BROADCAST")
+        registerReceiver(broadcastReceiver, filter)
+
     }
 
     override fun onResume() {
@@ -99,6 +121,12 @@ class MainActivity : AppCompatActivity(), NetworkStateChangeListener {
         noInternetDailog = NoInternetDailog(this)
         MyReceiver = MyReceiverForInternet(this)
         registerReceiver(MyReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        updateUIForIndicator()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if(broadcastReceiver != null) unregisterReceiver(broadcastReceiver)
     }
 
     override fun onBackPressed() {
@@ -343,5 +371,19 @@ class MainActivity : AppCompatActivity(), NetworkStateChangeListener {
         super.NetworkStateChange(isConnected)
 
         if (!isConnected) noInternetDailog?.show() else if (isConnected) noInternetDailog?.dismiss()
+    }
+
+    fun updateUIForIndicator(){
+        tinyDB = TinyDB(this)
+
+        if(tinyDB.getBoolean("ChatIndicator"))
+            binding.chatIndicator.visibility = View.VISIBLE
+        else
+            binding.chatIndicator.visibility = View.GONE
+
+        if(tinyDB.getBoolean("OtherIndicator"))
+            binding.notificationIndicator.visibility = View.VISIBLE
+        else
+            binding.notificationIndicator.visibility = View.GONE
     }
 }

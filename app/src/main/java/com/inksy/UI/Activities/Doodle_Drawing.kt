@@ -184,7 +184,7 @@ class Doodle_Drawing : AppCompatActivity(), iOnClickListerner, IBillingHandler,
                         binding.buy.text = "Get it Now"
                     }
 
-                    ///   productID = Constants.googlePlayTestingProductID
+//                    productID = Constants.googlePlayTestingProductID
 
                     if (price == 0.99) {
                         productID = Constants.googlePlayDoodlePackPrice1
@@ -344,7 +344,7 @@ class Doodle_Drawing : AppCompatActivity(), iOnClickListerner, IBillingHandler,
                 if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
 
                     billingClient!!.queryPurchasesAsync(
-                        SkuType.SUBS
+                        SkuType.INAPP
                     ) { billingResult, list ->
 //                        doSomethingWithPurchaseList(list)
 // old way                 // val pr = billingClient?.queryPurchases(BillingClient.SkuType.INAPP)
@@ -390,6 +390,7 @@ class Doodle_Drawing : AppCompatActivity(), iOnClickListerner, IBillingHandler,
         skuList.add(productID)
         val params = SkuDetailsParams.newBuilder()
         params.setSkusList(skuList).setType(SkuType.INAPP)
+        billingProcessor!!.consumePurchase(productID)
         billingClient!!.querySkuDetailsAsync(
             params.build()
         ) { billingResult, skuDetailsList ->
@@ -462,7 +463,7 @@ class Doodle_Drawing : AppCompatActivity(), iOnClickListerner, IBillingHandler,
     fun handlePurchases(purchases: List<Purchase>) {
         for (purchase in purchases) {
             for (sku in 0 until purchase.skus.size) {
-                if (productID == sku.toString() && purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
+                if (productID == purchase.skus[sku].toString() && purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
                     val number2digits: Double = String.format("%.2f", wholedata?.price).toDouble()
                     createOrder(wholedata?.id!!, number2digits)
 

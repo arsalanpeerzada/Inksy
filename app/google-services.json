@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "337919082895",
+    "firebase_url": "https://inksy-c14c7-default-rtdb.firebaseio.com",
     "project_id": "inksy-c14c7",
     "storage_bucket": "inksy-c14c7.appspot.com"
   },
@@ -14,19 +15,27 @@
       },
       "oauth_client": [
         {
-          "client_id": "337919082895-g5j83i6e30p56kclk3dj4c3eio4022cn.apps.googleusercontent.com",
+          "client_id": "337919082895-7d92vbmm3au713m7l4guh4le0364i5kn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.inksy",
-            "certificate_hash": "2ce9d9951f281f7d49bd5182972bd667a45bde73"
+            "certificate_hash": "9435ca3cb2bc28bd91dd9f377f7467265c7e7cfb"
           }
         },
         {
-          "client_id": "337919082895-oitnp3snr68k241igecs09vqglr9i6ul.apps.googleusercontent.com",
+          "client_id": "337919082895-lsss77ecnrfjk7410i384mllhnp611q3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.inksy",
-            "certificate_hash": "65ee713ec5db07e56dd2a7403fc058831efa857b"
+            "certificate_hash": "4a87b09a4b4c699760d75953b6341870889cafdb"
+          }
+        },
+        {
+          "client_id": "337919082895-o550b16gl4gfqhjgek5rd9ulfeu46l2q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inksy",
+            "certificate_hash": "95f41b0f8ff26a644eb73597007e0fda85f730ab"
           }
         },
         {

@@ -352,16 +352,9 @@ class JournalRepo {
         selectedusers: List<SelectedAudience>,
         pages: List<PageTable>
     ): MutableLiveData<Resource<APIInterface.ApiResponse<Journals>>> {
-
-
         val builder = MultipartBody.Builder()
         builder.setType(MultipartBody.FORM)
-
-
-        builder.addFormDataPart(
-            "cover_image",
-            _cover_image.name,
-            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), _cover_image)
+        builder.addFormDataPart("cover_image", _cover_image.name, RequestBody.create("multipart/form-data".toMediaTypeOrNull(), _cover_image)
         )
         builder.addFormDataPart("category_id", _category_id.toString())
         builder.addFormDataPart("title", _title)
@@ -371,10 +364,7 @@ class JournalRepo {
         builder.addFormDataPart("protection", _protection)
         builder.addFormDataPart("is_active", _is_active)
         builder.addFormDataPart("pages[0][page_no]", "0")
-        builder.addFormDataPart(
-            "pages[0][page_image]",
-            _pageImage.name,
-            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), _pageImage)
+        builder.addFormDataPart("pages[0][page_image]", _pageImage.name, RequestBody.create("multipart/form-data".toMediaTypeOrNull(), _pageImage)
         )
 
         for (i in 0 until pages.size) {
@@ -485,10 +475,7 @@ class JournalRepo {
         builder.addFormDataPart("is_active", _is_active)
         builder.addFormDataPart("journal_id", journal_ID)
         builder.addFormDataPart("pages[0][id]", indexTemplateid)
-        builder.addFormDataPart(
-            "pages[0][page_image]",
-            _page_Image.name,
-            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), _page_Image)
+        builder.addFormDataPart("pages[0][page_image]", _page_Image.name, RequestBody.create("multipart/form-data".toMediaTypeOrNull(), _page_Image)
         )
 
         for (i in 0 until oldnumberofpages) {

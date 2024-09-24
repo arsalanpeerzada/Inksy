@@ -17,6 +17,8 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.messaging.RemoteMessage;
 import com.inksy.R;
 import com.inksy.UI.Activities.SplashActivity;
+import com.inksy.Utils.AppUtils;
+import com.inksy.Utils.TinyDB;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +29,7 @@ import java.util.Set;
 public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
 
     private final String SHARD_PREF = "com.inksy.gcmcloudmessaging";
+    private TinyDB tinyDB;
     private final Context mContext = this;
     private final String NOTIFICATION_ENABLED = "NOTIFICATION_ENABLED";
     String title, alert;
@@ -44,14 +47,37 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     }
 
 
+    @Override
+    public void handleIntent(Intent intent) {
+        try {
+            if (intent.getExtras() != null) {
+                RemoteMessage.Builder builder = new RemoteMessage.Builder("MyFirebaseMessagingService");
+                for (String key : intent.getExtras().keySet()) {
+                    builder.addData(key, intent.getExtras().getString(key));
+                }
+                onMessageReceived(builder.build());
+
+            } else {
+                super.handleIntent(intent);
+            }
+        } catch (Exception e) {
+            super.handleIntent(intent);
+        }
+    }
+
     /**
      * This message will get called
      * whenever SMS received from FCM
      */
 
+
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
+
+        tinyDB = new TinyDB(this);
+
         String from = remoteMessage.getFrom();
         Map data = remoteMessage.getData();
         Log.d("MSG", "onMessageReceived: " + data + " And " + from);
@@ -68,6 +94,14 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
         try {
             SharedPreferences appPrefs = mContext.getSharedPreferences(SHARD_PREF, Context.MODE_PRIVATE);
+
+            if(jsonObject.has("tag") && jsonObject.getString("tag").equals("CHAT"))
+                tinyDB.putBoolean("ChatIndicator", true);
+            if(jsonObject.has("tag") && !jsonObject.getString("tag").equals("CHAT"))
+                tinyDB.putBoolean("OtherIndicator", true);
+
+            if(!AppUtils.isAppIsInBackground(this))
+                sendBroadcast(new Intent("INDICATOR_BROADCAST"));
 
             if (jsonObject.has("title")) {
                 title = jsonObject.getString("title");

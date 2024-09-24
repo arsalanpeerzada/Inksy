@@ -1425,19 +1425,6 @@ class create_journal_entry : Fragment(), iOnClickListerner, OnPhotoEditorListene
             // Try to open bullets here and wrap into json
         }
 
-/*        for (i in 0 until bulletArray.length()) {
-            val _data = layout.getChildAt(i) as? LinearLayout
-
-            val centreX = (_data?.x!!).toString()
-            val centreY = (_data.y).toString()
-            val jsonObject = bulletArray.getJSONObject(i)
-            jsonObject.put("axixX", centreX)
-            jsonObject.put("axixY", centreY)
-            bulletArray.put(i, jsonObject)
-
-        }*/
-
-
         var journalDatabase: JournalDatabase = JournalDatabase.getInstance(requireContext())!!
 
         if (bulletitemcheck == true) {

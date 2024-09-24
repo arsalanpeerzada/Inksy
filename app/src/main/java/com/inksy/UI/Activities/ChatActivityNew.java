@@ -12,27 +12,20 @@ import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.ImageViewCompat;
@@ -41,15 +34,14 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -60,6 +52,7 @@ import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageException;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.JsonElement;
@@ -71,28 +64,19 @@ import com.inksy.Remote.APIInterface;
 import com.inksy.Remote.Resource;
 import com.inksy.Remote.Status;
 import com.inksy.UI.Adapter.ChatMessagesAdapter;
-import com.inksy.UI.Constants;
 import com.inksy.UI.Dialogs.CameraGalleryDialog;
 import com.inksy.UI.ViewModel.NotificationView;
 import com.inksy.Utils.AppUtils;
 import com.inksy.Utils.TinyDB;
 
 import java.io.File;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.TimeZone;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ChatActivityNew extends AppCompatActivity {
     View view;
-//    private ImageLoader imageLoader;
+    //    private ImageLoader imageLoader;
     private ArrayList<String> chatFileList;
 
 //    @BindView(R.id.progressBar)
@@ -150,6 +134,33 @@ public class ChatActivityNew extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         init();
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser != null) {
+            // User is signed in
+            Log.d("AuthCheck", "User is signed in");
+            // Proceed with the operation that requires authentication
+        } else {
+            // User is not signed in
+            Log.d("AuthCheck", "User is not signed in");
+            // Redirect user to login screen or initiate login process
+        }
+
+        if (currentUser != null) {
+            currentUser.reload().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(ChatActivityNew.this, "User Authenticated", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(ChatActivityNew.this, "User Invalid", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+
+        loadImage("Media/Android/1654594620503.jpg");
+
 
         isNotificationScreenOpened = true;
 
@@ -184,7 +195,7 @@ public class ChatActivityNew extends AppCompatActivity {
 
         tvName.setText(userName);
         String url = userImage;
-        
+
         if (url.startsWith("http://")) {
             url = url.replace("http://", "https://");
         }
@@ -208,8 +219,7 @@ public class ChatActivityNew extends AppCompatActivity {
                     @Override
                     public void onDialogClick(String callBack) {
                         if (callBack.equals("Camera")) {
-                            if (ContextCompat.checkSelfPermission(ChatActivityNew.this, Manifest.permission.CAMERA)
-                                    != PackageManager.PERMISSION_GRANTED) {
+                            if (ContextCompat.checkSelfPermission(ChatActivityNew.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                                 // If storage permissions are not granted, request permissions at run-time,
                                 // as per < API 23 guidelines.
                                 requestStoragePermissions();
@@ -282,11 +292,11 @@ public class ChatActivityNew extends AppCompatActivity {
         observer = new Observer<Resource<APIInterface.ApiResponse<JsonElement>>>() {
             @Override
             public void onChanged(Resource<APIInterface.ApiResponse<JsonElement>> jsonElement) {
-                if(jsonElement.getStatus() == Status.LOADING){
+                if (jsonElement.getStatus() == Status.LOADING) {
 
-                } else if(jsonElement.getStatus() == Status.ERROR){
+                } else if (jsonElement.getStatus() == Status.ERROR) {
 
-                } else if(jsonElement.getStatus() == Status.SUCCESS){
+                } else if (jsonElement.getStatus() == Status.SUCCESS) {
 
                 }
             }
@@ -295,18 +305,18 @@ public class ChatActivityNew extends AppCompatActivity {
         observerCreateChatNode = new Observer<Resource<APIInterface.ApiResponse<JsonElement>>>() {
             @Override
             public void onChanged(Resource<APIInterface.ApiResponse<JsonElement>> jsonElement) {
-                if(jsonElement.getStatus() == Status.LOADING){
+                if (jsonElement.getStatus() == Status.LOADING) {
 
-                } else if(jsonElement.getStatus() == Status.ERROR){
+                } else if (jsonElement.getStatus() == Status.ERROR) {
 
-                } else if(jsonElement.getStatus() == Status.SUCCESS){
+                } else if (jsonElement.getStatus() == Status.SUCCESS) {
                     isFirstMessageToSend = false;
 
-                    if(isSendTextMessage){
+                    if (isSendTextMessage) {
                         isSendTextMessage = false;
                         getUsersData2(userID, "SendMessage", textMessage);
 
-                    } else if(isUploadImageToSend){
+                    } else if (isUploadImageToSend) {
                         isUploadImageToSend = false;
                         getUsersData2(userID, "UploadImage", firebaseTempImage);
 
@@ -353,8 +363,7 @@ public class ChatActivityNew extends AppCompatActivity {
             startActivityForResult(Intent.createChooser(intent, "Select Picture"), 100);
 
         } else if (item.getItemId() == R.id.camera) {
-            if (ContextCompat.checkSelfPermission(ChatActivityNew.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(ChatActivityNew.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 requestStoragePermissions();
             } else {
 
@@ -402,37 +411,26 @@ public class ChatActivityNew extends AppCompatActivity {
     }
 
     private void requestStoragePermissions() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.CAMERA)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
 
-            Snackbar.make(tvName, "Storage access permissions are required to upload/download files.",
-                            Snackbar.LENGTH_LONG)
-                    .setActionTextColor(getResources().getColor(R.color.white))
-                    .setAction("Okay", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
-                                                Manifest.permission.READ_EXTERNAL_STORAGE},
-                                        13);
-                            }
-                        }
-                    })
-                    .show();
+            Snackbar.make(tvName, "Storage access permissions are required to upload/download files.", Snackbar.LENGTH_LONG).setActionTextColor(getResources().getColor(R.color.white)).setAction("Okay", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE}, 13);
+                    }
+                }
+            }).show();
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
-                                Manifest.permission.READ_EXTERNAL_STORAGE},
-                        13);
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE}, 13);
             }
         }
     }
 
     public void getChatAndStartListener(String chatRoom) {
 
-        Query query = getFirebaseDBInstance()
-                .child("chats")
-                .child(chatRoom);
+        Query query = getFirebaseDBInstance().child("chats").child(chatRoom);
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -444,7 +442,7 @@ public class ChatActivityNew extends AppCompatActivity {
                     chatMessageModelArrayList.add(chatMessageModel);
                 }
 
-                if(chatMessageModelArrayList.size() == 0){
+                if (chatMessageModelArrayList.size() == 0) {
                     isFirstMessageToSend = true;
                 } else {
                     chatMessagesAdapter.notifyDataSetChanged();
@@ -463,9 +461,7 @@ public class ChatActivityNew extends AppCompatActivity {
 
     public void getUserOnlineStatus(String userID) {
 
-        Query query = getFirebaseDBInstance()
-                .child("users")
-                .child(userID);
+        Query query = getFirebaseDBInstance().child("users").child(userID);
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -520,24 +516,22 @@ public class ChatActivityNew extends AppCompatActivity {
 
         String uniqueID = mDatabase.push().getKey();
 
-        mDatabase.child("chats").child(chatRoom).child(uniqueID).setValue(chatMessageModel)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        if (chatMessageModelArrayList.size() == 1) {
+        mDatabase.child("chats").child(chatRoom).child(uniqueID).setValue(chatMessageModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                if (chatMessageModelArrayList.size() == 1) {
 //                            addChatRecords(chatRoom, senderID, userID, image, userImage, senderName, userName,
 //                                    sharedPrefernces.getString(Constants.userCountryLogin, ""), userCountry);
 
-                        }
-                        getUsersData2(userID, "PushNotify", message);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ChatActivityNew.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+                }
+                getUsersData2(userID, "PushNotify", message);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(ChatActivityNew.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void uploadImage(Uri filePath, String imagePath) {
@@ -547,42 +541,48 @@ public class ChatActivityNew extends AppCompatActivity {
             progressDialog.setTitle("Uploading ...");
             progressDialog.setCancelable(false);
             progressDialog.show();
+            Uri file = Uri.fromFile(new File(imagePath));
+//            StorageReference ref = storageReference.child("Media/Android/" + imagePath);
+//            ref.putFile(filePath)
+//
+            StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+            storageRef.child("Media/Android/" + imagePath).putFile(file).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    progressDialog.dismiss();
 
-            StorageReference ref = storageReference.child("Media/Android/" + imagePath);
-            ref.putFile(filePath)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    taskSnapshot.getStorage().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressDialog.dismiss();
-
-                            taskSnapshot.getStorage().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Uri> task) {
-                                    String image = String.valueOf(task.getResult());
-                                    firebaseTempImage = image;
-                                    getUsersData2(userID, "UploadImage", image);
-                                    Log.d("", "");
-                                }
-                            });
-
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            progressDialog.dismiss();
-
-                            Toast.makeText(ChatActivityNew.this, "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot
-                                    .getTotalByteCount());
-                            progressDialog.setMessage("Uploaded " + (int) progress + "%");
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            String image = String.valueOf(task.getResult());
+                            firebaseTempImage = image;
+                            getUsersData2(userID, "UploadImage", image);
+                            Log.d("", "");
                         }
                     });
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    progressDialog.dismiss();
+
+                    if (e instanceof StorageException) {
+                        StorageException storageException = (StorageException) e;
+                        int errorCode = storageException.getErrorCode();
+                        String errorMessage = storageException.getMessage();
+                        Log.e("FirebaseUpload", "Error Code: " + errorCode + " Message: " + errorMessage);
+                    } else {
+                        Log.e("FirebaseUpload", "Other Exception: ", e);
+                    }
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                    progressDialog.setMessage("Uploaded " + (int) progress + "%");
+                }
+            });
         }
     }
 
@@ -691,27 +691,23 @@ public class ChatActivityNew extends AppCompatActivity {
         chatMessageModel.setIsOnChat(isOnChat);
 
         if (!userID.equals("")) {
-            getFirebaseDBInstance().child("users").child(userID).setValue(chatMessageModel)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Log.d("", "");
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(ChatActivityNew.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+            getFirebaseDBInstance().child("users").child(userID).setValue(chatMessageModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Log.d("", "");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(ChatActivityNew.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
 
     public void getUsersData2(String userID, String comesFrom, String image) {
-        Query query = getFirebaseDBInstance()
-                .child("users")
-                .child(userID);
+        Query query = getFirebaseDBInstance().child("users").child(userID);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -722,37 +718,25 @@ public class ChatActivityNew extends AppCompatActivity {
                     boolean isOnChat = userDataModelFirebase.getIsOnChat();
 
                     if (comesFrom.equals("UploadImage")) {
-                        if(isFirstMessageToSend){
+                        if (isFirstMessageToSend) {
                             isUploadImageToSend = true;
                             createChatNode(userID);
 
                         } else {
-                            sendMessage(
-                                    image,
-                                    prefManager.getString("id"),
-                                    prefManager.getString("fullname"),
-                                    2,
-                                    prefManager.getString("avatar"),
-                                    isOnChat);
+                            sendMessage(image, prefManager.getString("id"), prefManager.getString("fullname"), 2, prefManager.getString("avatar"), isOnChat);
                         }
 
-                    } else if(comesFrom.equals("SendMessage")){
-                        if(isFirstMessageToSend){
+                    } else if (comesFrom.equals("SendMessage")) {
+                        if (isFirstMessageToSend) {
                             isSendTextMessage = true;
                             createChatNode(userID);
 
                         } else {
-                            sendMessage(
-                                    image,
-                                    prefManager.getString("id"),
-                                    prefManager.getString("fullname"),
-                                    1,
-                                    prefManager.getString("avatar"),
-                                    isOnChat);
+                            sendMessage(image, prefManager.getString("id"), prefManager.getString("fullname"), 1, prefManager.getString("avatar"), isOnChat);
                         }
 
                     } else {
-                        if(!isOnChat){
+                        if (!isOnChat) {
 //                            String message = image.startsWith("http") ? "Image" : image;
                             pushNotify(userID);
                         }
@@ -827,13 +811,36 @@ public class ChatActivityNew extends AppCompatActivity {
 */
 
     private void pushNotify(String userId) {
-        notificationView.sendMessageNotification(Integer.parseInt(userId), prefManager.getString("token").toString()).
-                observe(this, observer);
+        notificationView.sendMessageNotification(Integer.parseInt(userId), prefManager.getString("token").toString()).observe(this, observer);
     }
 
     private void createChatNode(String userId) {
-        notificationView.createChatNode(Integer.parseInt(userId), prefManager.getString("token").toString()).
-                observe(this, observerCreateChatNode);
+        notificationView.createChatNode(Integer.parseInt(userId), prefManager.getString("token").toString()).observe(this, observerCreateChatNode);
+    }
+
+
+    public void loadImage(String path) {
+        // Create a storage reference from our app
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+
+        // Create a reference with an initial file path and name
+        StorageReference pathReference = storageRef.child(path);
+
+        // Use Picasso or Glide to download the image and display it
+        pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // Got the download URL for 'users/me/profile.png'
+                //Picasso.get().load(uri.toString()).into(imageView);
+                Toast.makeText(ChatActivityNew.this, "Load Successful", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Toast.makeText(ChatActivityNew.this, "Image get Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

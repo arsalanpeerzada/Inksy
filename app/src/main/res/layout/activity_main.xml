@@ -52,15 +52,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view" />
 
-            <ImageView
+            <RelativeLayout
                 android:layout_weight="1"
-                android:id="@+id/chat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:src="@drawable/message"
-                app:layout_constraintTop_toTopOf="@+id/view" />
+                app:layout_constraintTop_toTopOf="@+id/view">
 
+                <ImageView
+                    android:id="@+id/chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:src="@drawable/message" />
+
+                <View
+                    android:id="@+id/chatIndicator"
+                    android:visibility="gone"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="17dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/indicator_circle"/>
+
+            </RelativeLayout>
 
             <ImageView
                 android:layout_weight="1"
@@ -72,16 +87,30 @@
                 app:layout_constraintTop_toTopOf="@+id/view" />
 
 
-
-            <ImageView
+            <RelativeLayout
                 android:layout_weight="1"
-                android:id="@+id/notification"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:src="@drawable/notification_unselected"
-                app:layout_constraintTop_toTopOf="@+id/view" />
+                app:layout_constraintTop_toTopOf="@+id/view" >
 
+                <ImageView
+                    android:id="@+id/notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:src="@drawable/notification_unselected"/>
+
+                <View
+                    android:id="@+id/notificationIndicator"
+                    android:visibility="gone"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/indicator_circle"/>
+
+            </RelativeLayout>
 
             <ImageView
                 android:layout_weight="1"

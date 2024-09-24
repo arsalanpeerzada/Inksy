@@ -222,6 +222,7 @@ class Chat : Fragment() {
     }
 
     fun getUsersLastMsg(chatRoom: String) {
+        Log.d("ChatRoom", chatRoom)
         val query: Query = getFirebaseDBInstance()
             ?.child("chats")
             ?.child(chatRoom)
@@ -233,7 +234,7 @@ class Chat : Fragment() {
                 Log.d("", "")
                 var lastMessageModel = LastMessageModel()
                 val key: String = dataSnapshot?.getKey()!!
-                val value: Any = dataSnapshot?.getValue()!!
+//                val value: Any = dataSnapshot?.getValue()!!
 
                 for (postSnapshot in dataSnapshot.getChildren()) {
                     lastMessageModel = postSnapshot?.getValue(LastMessageModel::class.java)!!
