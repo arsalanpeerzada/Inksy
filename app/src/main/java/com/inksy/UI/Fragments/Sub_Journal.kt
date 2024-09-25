@@ -6,14 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.NumberPicker
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.deishelon.roundedbottomsheet.RoundedBottomSheetDialog
 import com.google.gson.Gson
 import com.inksy.Database.Entities.CategoryTable
 import com.inksy.Database.Entities.PurchasedDoodles
@@ -21,7 +18,6 @@ import com.inksy.Database.JournalDatabase
 import com.inksy.Interfaces.OnChangeStateClickListener
 import com.inksy.Interfaces.iOnClickListerner
 import com.inksy.Model.Journals
-import com.inksy.R
 import com.inksy.Remote.Status
 import com.inksy.UI.Activities.CreateActivity
 import com.inksy.UI.Activities.StartingActivity
@@ -36,8 +32,6 @@ import com.inksy.UI.ViewModel.JournalView
 import com.inksy.Utils.Permissions
 import com.inksy.Utils.TinyDB
 import com.inksy.databinding.FragmentSubJournalBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.io.Serializable
 
 
@@ -204,9 +198,9 @@ class Sub_Journal :
                             categoriesList[i].createdAt,
                             categoriesList[i].updatedAt
                         )
-                        GlobalScope.launch {
-                            journalDatabase.getJournalData().insertCategory(categoryTable)
-                        }
+
+                        journalDatabase.getJournalData().insertCategory(categoryTable)
+
 
                         val json = categoriesList[i]
                         val gson = Gson()

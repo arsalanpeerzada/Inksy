@@ -198,7 +198,7 @@ class CreateJournalCoverInfo : Fragment() {
                             it.data.data!![i].createdAt,
                             it.data.data!![i].updatedAt
                         )
-                        GlobalScope.launch {
+
                             journalDatabase.getJournalData().insertCategory(categoryTable)
                             catList = journalDatabase.getJournalData()
                                 .getAllCategories() as ArrayList<CategoryTable>
@@ -212,7 +212,7 @@ class CreateJournalCoverInfo : Fragment() {
                             for (i in 0 until catList.size) {
                                 data[i] = namelist[i]
                             }
-                        }
+
                     }
                 }
                 Status.ERROR -> {}
@@ -276,6 +276,7 @@ class CreateJournalCoverInfo : Fragment() {
                         }
                         Status.ERROR -> {}
                         Status.LOADING -> {}
+                        else -> {}
                     }
                 }
 

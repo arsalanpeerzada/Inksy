@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -288,6 +287,8 @@ class ViewAll : AppCompatActivity(), iOnClickListerner, OnChangeStateClickListen
                 Status.ERROR -> {
                     Toast.makeText(this@ViewAll, it.message.toString(), Toast.LENGTH_SHORT).show()
                 }
+
+                else -> {}
             }
         }
     }
@@ -304,6 +305,8 @@ class ViewAll : AppCompatActivity(), iOnClickListerner, OnChangeStateClickListen
                 Status.ERROR -> {
                     Toast.makeText(this@ViewAll, it.message.toString(), Toast.LENGTH_SHORT).show()
                 }
+
+                else -> {}
             }
         }
     }

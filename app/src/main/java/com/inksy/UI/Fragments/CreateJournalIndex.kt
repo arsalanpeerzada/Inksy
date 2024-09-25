@@ -16,7 +16,11 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.ContextThemeWrapper
@@ -35,12 +39,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.burhanrashid52.photoediting.*
+import com.burhanrashid52.photoediting.EmojiBSFragment
+import com.burhanrashid52.photoediting.PropertiesBSFragment
+import com.burhanrashid52.photoediting.ShapeBSFragment
+import com.burhanrashid52.photoediting.StickerBSFragment
+import com.burhanrashid52.photoediting.TextEditorDialogFragment
 import com.burhanrashid52.photoediting.TextEditorDialogFragment.Companion.show
 import com.deishelon.roundedbottomsheet.RoundedBottomSheetDialog
-import com.elconfidencial.bubbleshowcase.BubbleShowCase
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseBuilder
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseSequence
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.gson.Gson
 import com.inksy.Database.Entities.JournalIndexTable
@@ -48,7 +53,11 @@ import com.inksy.Database.Entities.PageTable
 import com.inksy.Database.Entities.PurchasedDoodles
 import com.inksy.Database.Entities.SelectedAudience
 import com.inksy.Database.JournalDatabase
-import com.inksy.Interfaces.*
+import com.inksy.Interfaces.OnDialogBulletClickListener
+import com.inksy.Interfaces.OnDialogClickListener
+import com.inksy.Interfaces.PopUpOnClickListerner
+import com.inksy.Interfaces.iOnClickListerner
+import com.inksy.Interfaces.onMoveListener
 import com.inksy.Model.Styles
 import com.inksy.Model.TransformInfo
 import com.inksy.R
@@ -67,7 +76,11 @@ import com.inksy.Utils.FileUtil
 import com.inksy.Utils.TinyDB
 import com.inksy.databinding.FragmentCreateJournalIndexBinding
 import io.github.hyuwah.draggableviewlib.DraggableView
-import ja.burhanrashid52.photoeditor.*
+import ja.burhanrashid52.photoeditor.DrawingView
+import ja.burhanrashid52.photoeditor.OnPhotoEditorListener
+import ja.burhanrashid52.photoeditor.PhotoEditor
+import ja.burhanrashid52.photoeditor.TextStyleBuilder
+import ja.burhanrashid52.photoeditor.ViewType
 import ja.burhanrashid52.photoeditor.shape.ShapeBuilder
 import ja.burhanrashid52.photoeditor.shape.ShapeType
 import kotlinx.coroutines.launch
@@ -388,65 +401,65 @@ class CreateJournalIndex : Fragment(), iOnClickListerner, OnPhotoEditorListener,
         mShapeBSFragment!!.setPropertiesChangeListener(this)
         var closeImage: Drawable = resources.getDrawable(R.drawable.baseline_close_16)
 
-        var bulletShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
-            .title("Bullets")
-            .description("In this option you can select four types of bullets, then you can select Header, add bullet items, bold, italic, underline, and strike through text, increase and decrease text size and change typeface of text")//Any title for the bubble view
-            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
-            .targetView(binding.bullets) //View to point out
-        //Display the ShowCase
-
-        var pictureShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
-            .title("Picture")
-            .description("Add your photos or doodles you got from the doodle store.")//Any title for the bubble view
-            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
-            .targetView(binding.picture) //View to point out
-            .closeActionImage(closeImage)
-        //Display the ShowCase
-
-        var drawwingShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
-            .title("Drawing")
-            .description("Draw something with the pen.")//Any title for the bubble view
-            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
-            .targetView(binding.doodle) //View to point out
-            .closeActionImage(closeImage)
-        //Display the ShowCase
-
-
-        var textShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
-            .title("Text")
-            .description("Add some text to your journal.")//Any title for the bubble view
-            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
-            .targetView(binding.text) //View to point out
-            .closeActionImage(closeImage)
-        //Display the ShowCase
-
-        var undoShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
-            .title("Undo")
-            .description("")//Any title for the bubble view
-            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
-            .targetView(binding.buttonUndo) //View to point out
-            .closeActionImage(closeImage)
-
-        var redoShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
-            .title("Redo")
-            .description("")//Any title for the bubble view
-            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
-            .targetView(binding.buttonRedo) //View to point out
-            .closeActionImage(closeImage)
-
-        var pageShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
-            .title("Page")
-            .description("Create a new journal page.")//Any title for the bubble view
-            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
-            .targetView(binding.plus) //View to point out
-            .closeActionImage(closeImage)
+//        var bulletShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
+//            .title("Bullets")
+//            .description("In this option you can select four types of bullets, then you can select Header, add bullet items, bold, italic, underline, and strike through text, increase and decrease text size and change typeface of text")//Any title for the bubble view
+//            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            .targetView(binding.bullets) //View to point out
+//        //Display the ShowCase
+//
+//        var pictureShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
+//            .title("Picture")
+//            .description("Add your photos or doodles you got from the doodle store.")//Any title for the bubble view
+//            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            .targetView(binding.picture) //View to point out
+//            .closeActionImage(closeImage)
+//        //Display the ShowCase
+//
+//        var drawwingShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
+//            .title("Drawing")
+//            .description("Draw something with the pen.")//Any title for the bubble view
+//            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            .targetView(binding.doodle) //View to point out
+//            .closeActionImage(closeImage)
+//        //Display the ShowCase
+//
+//
+//        var textShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
+//            .title("Text")
+//            .description("Add some text to your journal.")//Any title for the bubble view
+//            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            .targetView(binding.text) //View to point out
+//            .closeActionImage(closeImage)
+//        //Display the ShowCase
+//
+//        var undoShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
+//            .title("Undo")
+//            .description("")//Any title for the bubble view
+//            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            .targetView(binding.buttonUndo) //View to point out
+//            .closeActionImage(closeImage)
+//
+//        var redoShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
+//            .title("Redo")
+//            .description("")//Any title for the bubble view
+//            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            .targetView(binding.buttonRedo) //View to point out
+//            .closeActionImage(closeImage)
+//
+//        var pageShowcase = BubbleShowCaseBuilder(requireActivity()) //Activity instance
+//            .title("Page")
+//            .description("Create a new journal page.")//Any title for the bubble view
+//            .backgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            .textColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            .targetView(binding.plus) //View to point out
+//            .closeActionImage(closeImage)
 
 
         var firstTime = tinyDB.getBoolean("isfirstTime")
@@ -454,15 +467,15 @@ class CreateJournalIndex : Fragment(), iOnClickListerner, OnPhotoEditorListener,
             tinyDB.putBoolean("isfirstTime", false)
 
 
-            //.addShowCase(bulletShowcase)
-            BubbleShowCaseSequence()
-                .addShowCase(pictureShowcase)
-                .addShowCase(drawwingShowcase)
-                .addShowCase(textShowcase)
-                .addShowCase(undoShowcase)
-                .addShowCase(redoShowcase)
-                .addShowCase(pageShowcase)
-                .show()
+//            //.addShowCase(bulletShowcase)
+//            BubbleShowCaseSequence()
+//                .addShowCase(pictureShowcase)
+//                .addShowCase(drawwingShowcase)
+//                .addShowCase(textShowcase)
+//                .addShowCase(undoShowcase)
+//                .addShowCase(redoShowcase)
+//                .addShowCase(pageShowcase)
+//                .show()
         }
 
         return binding.root

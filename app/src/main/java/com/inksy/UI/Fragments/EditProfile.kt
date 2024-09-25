@@ -1,24 +1,18 @@
 package com.inksy.UI.Fragments
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.inksy.R
 import com.inksy.UI.ViewModel.EditProfileView
-import com.inksy.Utils.FileUtil
 import com.inksy.Utils.TinyDB
 import com.inksy.databinding.FragmentEditProfileBinding
 import com.inksy.databinding.TablayoutBinding
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
 
 
 class EditProfile : Fragment() {

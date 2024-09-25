@@ -10,7 +10,7 @@ import com.inksy.Database.Entities.*
 interface iJournalSave {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertJournalIndexTable(journals: JournalIndexTable)
+    fun insertJournalIndexTable(journals: JournalIndexTable)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDoodles(purchasedDoodles: PurchasedDoodles)
@@ -19,8 +19,8 @@ interface iJournalSave {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPage(pagetable: PageTable)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPagetableforlinks(pagetableforlinks: PageTableForLinks)
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    suspend fun insertPagetableforlinks(pagetableforlinks: PageTableForLinks)
 
 //    @Query("Insert into PageTable values(:pageId,:backgroundImage,:pagetitle,:bulletArray,:textArray,:imageArray,:journalId)")
 //    fun insertIntoPageTable(
@@ -34,10 +34,10 @@ interface iJournalSave {
 //    )
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCategory(categoryTable: CategoryTable)
+    fun insertCategory(categoryTable: CategoryTable)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAudeience(audience: SelectedAudience)
+    fun insertAudeience(audience: SelectedAudience)
 
     @Query("Insert into journalIndex(indexBackground,journalId) values(:indexBackground,:id)")
     fun createJournalWithIndexBackGround(indexBackground: String, id: String)

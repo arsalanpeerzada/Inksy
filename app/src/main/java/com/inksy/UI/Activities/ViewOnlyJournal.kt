@@ -14,12 +14,6 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.google.android.gms.ads.AdError
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.inksy.Database.Entities.JournalIndexTable
 import com.inksy.Database.Entities.PageTable
 import com.inksy.Database.JournalDatabase
@@ -35,14 +29,11 @@ import com.inksy.UI.Dialogs.TwoButtonDialog
 import com.inksy.UI.ViewModel.JournalView
 import com.inksy.Utils.TinyDB
 import com.inksy.databinding.ActivityViewOnlyJournalBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import org.json.JSONObject
 
 
 class ViewOnlyJournal() : AppCompatActivity() {
     var journalData: Journals? = null
-    private var mInterstitialAd: InterstitialAd? = null
+    //private var mInterstitialAd: InterstitialAd? = null
     lateinit var binding: ActivityViewOnlyJournalBinding
     lateinit var like: ImageView
     lateinit var comment: ImageView
@@ -297,6 +288,8 @@ class ViewOnlyJournal() : AppCompatActivity() {
                                                 Toast.LENGTH_SHORT
                                             ).show()
                                         }
+
+                                        else -> {}
                                     }
                                 }
                             return@OnMenuItemClickListener true
@@ -400,9 +393,9 @@ class ViewOnlyJournal() : AppCompatActivity() {
             "",
         )
 
-        GlobalScope.launch {
+
             journalDatabase.getJournalData().insertJournalIndexTable(jtable)
-        }
+
     }
 
     private fun deleteJournal(journal_id: String) {
@@ -462,6 +455,9 @@ class ViewOnlyJournal() : AppCompatActivity() {
                     journalData = journals
                     populatedata(journals!!)
                 }
+
+                Status.ERROR -> {}
+                Status.LOADING -> {}
             }
 
         }
@@ -519,73 +515,73 @@ class ViewOnlyJournal() : AppCompatActivity() {
     }
 
     private fun loadIntersititialAd() {
-        var adRequest = AdRequest.Builder().build()
-
-        InterstitialAd.load(
-            this,
-            "ca-app-pub-9808753304257500/1677777040",
-            adRequest,
-            object : InterstitialAdLoadCallback() {
-                override fun onAdFailedToLoad(adError: LoadAdError) {
-                    Log.d("MobileAD", adError?.toString())
-                    mInterstitialAd = null
-                }
-
-                override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                    Log.d("MobileAD", "Ad was loaded.")
-                    mInterstitialAd = interstitialAd
-
-                    var showAd = 0;
-                    showAd = tinyDb.getInt("showad")
-
-                    if (showAd < 5) {
-                        showAd++
-                        tinyDb.putInt("showad", showAd)
-                    } else if (showAd == 5) {
-                        tinyDb.putInt("showad", 0)
-                        startIntersititialAd()
-                    }
-                }
-            })
+//        var adRequest = AdRequest.Builder().build()
+//
+//        InterstitialAd.load(
+//            this,
+//            "ca-app-pub-9808753304257500/1677777040",
+//            adRequest,
+//            object : InterstitialAdLoadCallback() {
+//                override fun onAdFailedToLoad(adError: LoadAdError) {
+//                    Log.d("MobileAD", adError?.toString())
+//                    mInterstitialAd = null
+//                }
+//
+//                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+//                    Log.d("MobileAD", "Ad was loaded.")
+//                    mInterstitialAd = interstitialAd
+//
+//                    var showAd = 0;
+//                    showAd = tinyDb.getInt("showad")
+//
+//                    if (showAd < 5) {
+//                        showAd++
+//                        tinyDb.putInt("showad", showAd)
+//                    } else if (showAd == 5) {
+//                        tinyDb.putInt("showad", 0)
+//                        startIntersititialAd()
+//                    }
+//                }
+//            })
     }
 
     private fun startIntersititialAd() {
 
-        if (mInterstitialAd != null) {
-            mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-                override fun onAdClicked() {
-                    // Called when a click is recorded for an ad.
-                    Log.d("MobileAD", "Ad was clicked.")
-                }
-
-                override fun onAdDismissedFullScreenContent() {
-                    // Called when ad is dismissed.
-                    Log.d("MobileAD", "Ad dismissed fullscreen content.")
-                    mInterstitialAd = null
-
-
-                }
-
-                override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-                    // Called when ad fails to show.
-                    Log.e("MobileAD", "Ad failed to show fullscreen content.")
-                    mInterstitialAd = null
-                }
-
-                override fun onAdImpression() {
-                    // Called when an impression is recorded for an ad.
-                    Log.d("MobileAD", "Ad recorded an impression.")
-                }
-
-                override fun onAdShowedFullScreenContent() {
-                    // Called when ad is shown.
-                    Log.d("MobileAD", "Ad showed fullscreen content.")
-                }
-            }
-            mInterstitialAd?.show(this)
-        } else {
-            Log.d("MobileAD", "The interstitial ad wasn't ready yet.")
-        }
+//        if (mInterstitialAd != null) {
+//            mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+//                override fun onAdClicked() {
+//                    // Called when a click is recorded for an ad.
+//                    Log.d("MobileAD", "Ad was clicked.")
+//                }
+//
+//                override fun onAdDismissedFullScreenContent() {
+//                    // Called when ad is dismissed.
+//                    Log.d("MobileAD", "Ad dismissed fullscreen content.")
+//                    mInterstitialAd = null
+//
+//
+//                }
+//
+//                override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+//                    // Called when ad fails to show.
+//                    Log.e("MobileAD", "Ad failed to show fullscreen content.")
+//                    mInterstitialAd = null
+//                }
+//
+//                override fun onAdImpression() {
+//                    // Called when an impression is recorded for an ad.
+//                    Log.d("MobileAD", "Ad recorded an impression.")
+//                }
+//
+//                override fun onAdShowedFullScreenContent() {
+//                    // Called when ad is shown.
+//                    Log.d("MobileAD", "Ad showed fullscreen content.")
+//                }
+//            }
+//            mInterstitialAd?.show(this)
+//        } else {
+//            Log.d("MobileAD", "The interstitial ad wasn't ready yet.")
+//        }
 
     }
 }

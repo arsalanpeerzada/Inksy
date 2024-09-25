@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.inksy">
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,6 +16,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
+
         android:name=".InksyApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -23,6 +25,8 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
+        tools:replace="android:resource"
+        android:resource="@xml/ga_ad_services_config"
         android:theme="@style/Theme.Inksy">
         <activity
             android:name=".UI.Activities.ShareJournalActivity"
@@ -142,9 +146,9 @@
             </intent-filter>
         </service>
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9808753304257500~5619149806" />
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
+<!--            android:value="ca-app-pub-9808753304257500~5619149806" />-->
     </application>
 
 </manifest>

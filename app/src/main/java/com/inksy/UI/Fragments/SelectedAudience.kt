@@ -17,8 +17,6 @@ import com.inksy.UI.Adapter.AudienceAdapter
 import com.inksy.UI.ViewModel.PeopleView
 import com.inksy.Utils.TinyDB
 import com.inksy.databinding.FragmentSelectedAudienceBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 class SelectedAudience : Fragment(), OnChangeStateClickListener {
@@ -105,9 +103,9 @@ class SelectedAudience : Fragment(), OnChangeStateClickListener {
                 audience.is_artist.toString()
             )
 
-            GlobalScope.launch {
-                journalDatabase.getJournalData().insertAudeience(data)
-            }
+
+            journalDatabase.getJournalData().insertAudeience(data)
+
         } else {
             journalDatabase.getJournalData().DeleteAudience(audienceList?.get(id).toString())
         }

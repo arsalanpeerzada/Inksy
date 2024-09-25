@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Example config for Google's ad services -->
+    <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <bool name="enable_tracking">true</bool>
+</resources>

@@ -389,6 +389,8 @@ class People : AppCompatActivity(), iOnClickListerner, OnChangeStateClickListene
                 Status.ERROR -> {
                     Toast.makeText(this@People, it.message.toString(), Toast.LENGTH_SHORT).show()
                 }
+
+                else -> {}
             }
         }
     }
@@ -405,6 +407,8 @@ class People : AppCompatActivity(), iOnClickListerner, OnChangeStateClickListene
                 Status.ERROR -> {
                     Toast.makeText(this@People, it.message.toString(), Toast.LENGTH_SHORT).show()
                 }
+
+                else -> {}
             }
         }
     }

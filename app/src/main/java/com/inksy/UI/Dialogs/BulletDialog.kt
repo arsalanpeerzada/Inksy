@@ -1,6 +1,5 @@
 package com.inksy.UI.Dialogs
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -17,8 +16,6 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseBuilder
-import com.elconfidencial.bubbleshowcase.BubbleShowCaseSequence
 import com.inksy.Interfaces.OnDialogBulletClickListener
 import com.inksy.Interfaces.PopUpOnClickListerner
 import com.inksy.Interfaces.iLinkOnClickListener

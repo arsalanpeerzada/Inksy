@@ -3,13 +3,12 @@ package com.inksy.UI.Fragments
 import android.content.Context
 import android.os.Bundle
 import android.text.Html
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.inksy.UI.Constants
 import com.inksy.UI.ViewModel.OthersView

@@ -405,6 +405,7 @@ class FragmentOtp : Fragment(), OnKeyboardVisibilityListener {
                         Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                     }
                     Status.LOADING -> {}
+                    else -> {}
                 }
             }
 
@@ -443,6 +444,7 @@ class FragmentOtp : Fragment(), OnKeyboardVisibilityListener {
                         Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
                     }
                     Status.LOADING -> {}
+                    else -> {}
                 }
             }
 

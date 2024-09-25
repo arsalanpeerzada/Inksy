@@ -391,6 +391,8 @@ class PackActivity : AppCompatActivity(), iOnClickListerner {
 
                     addDoodle(it?.id!!)
                 }
+
+                else -> {}
             }
         }
     }
@@ -417,6 +419,8 @@ class PackActivity : AppCompatActivity(), iOnClickListerner {
                             this.finish()
                             Toast.makeText(this, it?.data?.message, Toast.LENGTH_SHORT).show()
                         }
+
+                        else -> {}
                     }
                 }
             }

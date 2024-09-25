@@ -3,17 +3,10 @@ package com.inksy.UI.Activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.gms.ads.AdError
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.inksy.Interfaces.OnDialogClickListener
 import com.inksy.R
 import com.inksy.Remote.Status
@@ -29,7 +22,7 @@ class ArtisePanel : AppCompatActivity() {
     lateinit var doodleView: DoodleView
     lateinit var tinydb: TinyDB
     var token = ""
-    private var mInterstitialAd: InterstitialAd? = null
+   // private var mInterstitialAd: InterstitialAd? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityArtisePanelBinding.inflate(layoutInflater)
@@ -123,64 +116,64 @@ class ArtisePanel : AppCompatActivity() {
     }
 
     private fun loadIntersititialAd(){
-        var adRequest = AdRequest.Builder().build()
-
-        InterstitialAd.load(this,"ca-app-pub-9808753304257500/8867580936", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                Log.d("MobileAD", adError?.toString())
-                mInterstitialAd = null
-            }
-
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                Log.d("MobileAD", "Ad was loaded.")
-                mInterstitialAd = interstitialAd
-            }
-        })
+//        var adRequest = AdRequest.Builder().build()
+//
+//        InterstitialAd.load(this,"ca-app-pub-9808753304257500/8867580936", adRequest, object : InterstitialAdLoadCallback() {
+//            override fun onAdFailedToLoad(adError: LoadAdError) {
+//                Log.d("MobileAD", adError?.toString())
+//                mInterstitialAd = null
+//            }
+//
+//            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+//                Log.d("MobileAD", "Ad was loaded.")
+//                mInterstitialAd = interstitialAd
+//            }
+//        })
     }
 
     private fun startIntersititialAd(){
 
-        if (mInterstitialAd != null) {
-            mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
-                override fun onAdClicked() {
-                    // Called when a click is recorded for an ad.
-                    Log.d("MobileAD", "Ad was clicked.")
-                }
-
-                override fun onAdDismissedFullScreenContent() {
-                    // Called when ad is dismissed.
-                    Log.d("MobileAD", "Ad dismissed fullscreen content.")
-                    mInterstitialAd = null
-
-                    this@ArtisePanel.startActivity(
-                        Intent(
-                            this@ArtisePanel,
-                            ArtistDashboard::class.java
-                        )
-                    )
-                    this@ArtisePanel.finish()
-                }
-
-                override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-                    // Called when ad fails to show.
-                    Log.e("MobileAD", "Ad failed to show fullscreen content.")
-                    mInterstitialAd = null
-                }
-
-                override fun onAdImpression() {
-                    // Called when an impression is recorded for an ad.
-                    Log.d("MobileAD", "Ad recorded an impression.")
-                }
-
-                override fun onAdShowedFullScreenContent() {
-                    // Called when ad is shown.
-                    Log.d("MobileAD", "Ad showed fullscreen content.")
-                }
-            }
-            mInterstitialAd?.show(this)
-        } else {
-            Log.d("MobileAD", "The interstitial ad wasn't ready yet.")
-        }
+//        if (mInterstitialAd != null) {
+//            mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+//                override fun onAdClicked() {
+//                    // Called when a click is recorded for an ad.
+//                    Log.d("MobileAD", "Ad was clicked.")
+//                }
+//
+//                override fun onAdDismissedFullScreenContent() {
+//                    // Called when ad is dismissed.
+//                    Log.d("MobileAD", "Ad dismissed fullscreen content.")
+//                    mInterstitialAd = null
+//
+//                    this@ArtisePanel.startActivity(
+//                        Intent(
+//                            this@ArtisePanel,
+//                            ArtistDashboard::class.java
+//                        )
+//                    )
+//                    this@ArtisePanel.finish()
+//                }
+//
+//                override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+//                    // Called when ad fails to show.
+//                    Log.e("MobileAD", "Ad failed to show fullscreen content.")
+//                    mInterstitialAd = null
+//                }
+//
+//                override fun onAdImpression() {
+//                    // Called when an impression is recorded for an ad.
+//                    Log.d("MobileAD", "Ad recorded an impression.")
+//                }
+//
+//                override fun onAdShowedFullScreenContent() {
+//                    // Called when ad is shown.
+//                    Log.d("MobileAD", "Ad showed fullscreen content.")
+//                }
+//            }
+//            mInterstitialAd?.show(this)
+//        } else {
+//            Log.d("MobileAD", "The interstitial ad wasn't ready yet.")
+//        }
 
     }
 }

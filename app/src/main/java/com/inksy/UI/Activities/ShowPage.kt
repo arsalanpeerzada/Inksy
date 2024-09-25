@@ -685,6 +685,7 @@ class ShowPage : AppCompatActivity(), iOnClickListerner, OnPhotoEditorListener,
                         }
                         Status.ERROR -> {}
                         Status.LOADING -> {}
+                        else -> {}
                     }
                 }
 
@@ -718,6 +719,7 @@ class ShowPage : AppCompatActivity(), iOnClickListerner, OnPhotoEditorListener,
                         }
                         Status.ERROR -> {}
                         Status.LOADING -> {}
+                        else -> {}
                     }
                 }
 

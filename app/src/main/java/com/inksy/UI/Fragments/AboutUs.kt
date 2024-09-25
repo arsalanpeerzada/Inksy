@@ -10,12 +10,10 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.inksy.UI.Constants
 import com.inksy.UI.ViewModel.OthersView
 import com.inksy.databinding.FragmentAboutUsBinding
-import com.inksy.databinding.FragmentTermsBinding
 
 
 class AboutUs : Fragment() {
