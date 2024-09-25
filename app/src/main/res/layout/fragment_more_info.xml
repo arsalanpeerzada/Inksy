@@ -29,7 +29,6 @@
 
 
             <TextView
-
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,6 +41,60 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
+
+            <ImageView
+                android:id="@+id/image_dooble11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:onClick="OpenWebView"
+                android:src="@drawable/doodle_store"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+
+            <TextView
+                android:id="@+id/tv_doodle22"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/sfmedium"
+                android:onClick="OpenWebView"
+                android:text="Open Webview"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_dooble11"
+                app:layout_constraintTop_toTopOf="@+id/image_dooble11" />
+
+            <TextView
+                android:id="@+id/tv_desc_doodle33"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/sfmedium"
+                android:onClick="OpenWebView"
+                android:text="Open Webview"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_dooble11"
+                app:layout_constraintTop_toBottomOf="@+id/tv_doodle22" />
+
+            <View
+                android:id="@+id/view64"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/line_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_desc_doodle33"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc_doodle33" />
+
+
+
             <!--        Doodle Store-->
 
             <ImageView
@@ -53,7 +106,7 @@
                 android:onClick="OpenDoodle"
                 android:src="@drawable/doodle_store"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                app:layout_constraintTop_toBottomOf="@+id/view64" />
 
 
             <TextView

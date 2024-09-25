@@ -38,6 +38,24 @@ class MoreInfo : Fragment() {
         tinyDB = TinyDB(requireContext())
         binding = FragmentMoreInfoBinding.inflate(layoutInflater)
 
+
+        binding.imageDooble11.setOnClickListener() {
+
+            //  Toast.makeText(requireContext(), "Feature coming soon", Toast.LENGTH_SHORT).show()
+            openNewActivity(WebViewTest::class.java)
+        }
+        binding.tvDoodle22.setOnClickListener() {
+
+            //  Toast.makeText(requireContext(), "Feature coming soon", Toast.LENGTH_SHORT).show()
+            openNewActivity(WebViewTest::class.java)
+        }
+        binding.tvDescDoodle33.setOnClickListener() {
+
+            //  Toast.makeText(requireContext(), "Feature coming soon", Toast.LENGTH_SHORT).show()
+            openNewActivity(WebViewTest::class.java)
+        }
+
+
         binding.tvDoodle.setOnClickListener() {
 
             //  Toast.makeText(requireContext(), "Feature coming soon", Toast.LENGTH_SHORT).show()

@@ -20,7 +20,7 @@ import com.inksy.Utils.TinyDB
 import com.inksy.databinding.ActivityListBinding
 import java.io.Serializable
 
-class List : AppCompatActivity(), iOnClickListerner, SwipeRefreshLayout.OnRefreshListener,
+class List<T> : AppCompatActivity(), iOnClickListerner, SwipeRefreshLayout.OnRefreshListener,
     OnChangeStateClickListener {
 
     var followRequest = false

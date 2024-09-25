@@ -199,7 +199,7 @@ class Chat : Fragment() {
                             for (i in 0 until stringArrayList?.size!!) {
                                 var splitValue = stringArrayList!!.get(i).split("-")
                                 if(splitValue[1] != "0" && splitValue[2] != "0"){
-                                    getUsersLastMsg(stringArrayList!!.get(i))
+                                   // getUsersLastMsg(stringArrayList!!.get(i))
                                 }
                             }
                         }
