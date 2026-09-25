@@ -53,3 +53,31 @@ Inksy is a platform designed to provide a safe, customizable, and creative journ
 - **Responsive Design:** Using scalable density-independent pixels (SDP) to ensure the application UI looks consistent across various Android screen sizes and densities.
 - **Privacy Controls:** Designing a database schema and application logic that robustly handles varied privacy settings (private, friends-only, public) for user-generated content.
 - **Monetization & In-App Purchases:** Integrating the Google Play Billing Library to handle a digital economy (the Doodle store) within the app, understanding product fulfillment and purchase verification.
+## 5. Screenshots
+<div align="center">
+  <img src="screenshots/splash.png" width="200" alt="Splash Screen"/>
+  <img src="screenshots/login.png" width="200" alt="Login Screen"/>
+  <img src="screenshots/profile.jpg" width="200" alt="User Profile"/>
+  <img src="screenshots/earn.jpg" width="200" alt="Collaborate and Earn"/>
+</div>
+
+## 6. Key Features
+- **Rich Text & Canvas Journaling:** Express yourself with text, images, and custom doodles.
+- **Granular Privacy Controls:** Set journals to Private, Select Groups, or Public on the network.
+- **Doodle Store:** A built-in marketplace where you can purchase art or monetize your own doodles.
+- **Social Features:** Follow your favorite users, comment on journals, and curate your feed without the anxiety of traditional social media platforms.
+- **Data Visualizations:** Interactive charts and graphs powered by MPAndroidChart.
+- **Secure Authentication:** Phone number verification using OTP via Firebase.
+
+## 7. Prerequisites & Installation
+1. **Clone the repository:**
+   `ash
+   git clone https://github.com/arsalanpeerzada/Inksy.git
+   `
+2. **Open in Android Studio:** Open the cloned directory in Android Studio.
+3. **Firebase Setup:** 
+   - You will need to create a project on the [Firebase Console](https://console.firebase.google.com/).
+   - Add an Android App to the project with the package name com.inksy.
+   - Download the google-services.json file and place it in the pp/ directory.
+   - Enable Phone Authentication, Realtime Database, and Storage in your Firebase Console.
+4. **Build & Run:** Sync the Gradle project and hit Run!
